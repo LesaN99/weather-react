@@ -76,8 +76,8 @@ function searchCity(event) {
         <p>
           This project was coded by
           <a href="https://github.com/LesaN99" target="_blank" rel="noreferrer">Palesa Ndlovu</a> and is
-          <a href="https://github.com/LesaN99/project2.git" target="_blank"  rel="noreferrer"> on GitHub</a> and
-          <a href="https://my-awesome-weather-app-project.netlify.app/" target="_blank"  rel="noreferrer"> hosted on Netlify</a>
+          <a href="https://github.com/LesaN99/weather-react" target="_blank"  rel="noreferrer"> on GitHub</a> and
+          <a href="https://dulcet-fairy-9dab11.netlify.app/" target="_blank"  rel="noreferrer"> hosted on Netlify</a>
         </p>
       </footer>
       </div>
