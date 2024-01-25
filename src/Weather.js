@@ -1,11 +1,13 @@
 import axios from "axios";
 import "./Weather.css";
 import { useState} from "react";
-import ReactAnimatedWeather from 'react-animated-weather';
+
 
 export default function Weather() {
   const [city,setCity] = useState("");
   const [weather, setWeather] = useState({});
+  const [heading, setHeading] = useState("Johannesburg");
+
 
 function displayWeather(response) {
     setWeather({
@@ -15,11 +17,12 @@ function displayWeather(response) {
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
     });
+    setHeading(city);
 }
 
 
 
-function handleSubmit(event) {
+function searchCity(event) {
     event.preventDefault();
     let apiKey = `616b14cbd38253313b3b8852fa77335d`
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -30,11 +33,13 @@ function handleSubmit(event) {
     setCity(event.target.value);
   }
 
+ 
+
    return (
     <div className="weather">
         <div className="weather-app">
         <header>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={searchCity}>
           <i class="fa-solid fa-magnifying-glass magnifying-icon"></i>
           <input
             type="search"
@@ -49,7 +54,7 @@ function handleSubmit(event) {
       <main>
         <div className="current-weather">
           <div>
-            <h1 className="current-city">{city}</h1>
+            <h1 className="current-city">{heading} </h1>
             <p className="current-details">
               <span>Wednesday</span>,  <span>{weather.description}</span>
                <br />
@@ -58,12 +63,7 @@ function handleSubmit(event) {
           </div>
           <div className="current-temperature">
             <span className="current-temperature-icon"> 
-             <ReactAnimatedWeather
-             icon="CLOUDLY"
-             color="black"
-             size={90}
-             animate={true}
-            /> 
+             <img src={weather.icon} alt={weather.description} />
             </span>
             <span className="current-temperature-value"id="temperature">{Math.round(weather.temperature)}</span>
             <span className="current-temperature-unit">°C</span>
