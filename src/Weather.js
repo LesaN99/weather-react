@@ -18,6 +18,7 @@ function displayWeather(response) {
       description: response.data.weather[0].description,
     });
     setHeading(city);
+    
 }
 
 
