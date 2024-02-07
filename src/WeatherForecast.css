@@ -8,3 +8,9 @@
     opacity: 0.6;
     margin-left: 5px;
 }
+
+.WeatherForecastDay {
+    margin-top: 20px;
+    border: 1px dotted #e385ff;
+    border-radius: 4px;
+}
