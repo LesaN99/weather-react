@@ -1,0 +1,10 @@
+.WeatherForecast-icon {
+    position: relative;
+    top: -65px;
+    right: -85px;
+}
+
+.WeatherForecast-temperature-min {
+    opacity: 0.6;
+    margin-left: 5px;
+}
